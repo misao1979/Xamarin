@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,54 +19,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hms-qe-upU">
-                                <frame key="frameInset" minX="164" minY="363" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBE-Ac-vcx">
-                                <frame key="frameInset" minX="111" minY="274" width="152" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBE-Ac-vcx">
                                 <state key="normal" title="Hello World, Click Me!">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hms-qe-upU">
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="5uy-9h-FwD" kind="show" identifier="mainToNav" id="3os-pq-X3b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="oBE-Ac-vcx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HiD-uS-i16"/>
-                            <constraint firstItem="oBE-Ac-vcx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YgX-7e-bMc"/>
+                            <constraint firstItem="oBE-Ac-vcx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="95" id="17f-cz-No8"/>
+                            <constraint firstAttribute="bottom" secondItem="Hms-qe-upU" secondAttribute="bottom" constant="20" symbolic="YES" id="MCp-aC-Abi"/>
+                            <constraint firstItem="Hms-qe-upU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Y2g-0e-lPP"/>
+                            <constraint firstItem="oBE-Ac-vcx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="55" id="chH-aa-L4R"/>
+                            <constraint firstItem="oBE-Ac-vcx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lLM-B4-MRZ"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="Button" destination="oBE-Ac-vcx" id="OkX-0Z-gth"/>
-                        <segue destination="9Eq-Ui-h32" kind="show" id="VQu-6U-VMl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-346.875" y="56.25"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="sXR-EZ-CEy">
+        <!--Navigation Controller-->
+        <scene sceneID="ea2-TT-SJJ">
             <objects>
-                <navigationController id="9Eq-Ui-h32" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="iLA-UX-4vD"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pcK-0D-Lqb">
+                <navigationController id="5uy-9h-FwD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lIU-QL-11x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="bRs-on-K7e" kind="show" identifier="moveToMyMapController" id="HXY-g2-aGc"/>
-                        <segue destination="tNq-T9-QNw" kind="show" identifier="moveToMyWebViewController" id="nK5-P0-gho"/>
+                        <segue destination="ovd-bp-wbZ" kind="show" identifier="navToMenu" id="NxZ-bY-RGl"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0UB-8X-nz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="64p-1I-kyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="876" y="123"/>
+            <point key="canvasLocation" x="359" y="56"/>
         </scene>
-        <!--View Controller-->
+        <!--My Web View Controller-->
         <scene sceneID="pCP-q4-t62">
             <objects>
-                <viewController id="tNq-T9-QNw" sceneMemberID="viewController">
+                <viewController id="tNq-T9-QNw" customClass="MyWebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4qS-lM-WII"/>
                         <viewControllerLayoutGuide type="bottom" id="W4m-Yv-Eql"/>
@@ -78,12 +81,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLu-g2-aat" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="622"/>
+            <point key="canvasLocation" x="1870" y="612"/>
         </scene>
-        <!--View Controller-->
+        <!--My View Controller-->
+        <scene sceneID="9Vo-pF-75d">
+            <objects>
+                <viewController id="ovd-bp-wbZ" customClass="MyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u1u-lb-3Oa"/>
+                        <viewControllerLayoutGuide type="bottom" id="fct-6U-WgS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="529-7N-6Wy">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWa-aj-k6V">
+                                <state key="normal" title="Map"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bq-vf-pRm">
+                                <state key="normal" title="Web"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Bq-vf-pRm" firstAttribute="top" secondItem="wWa-aj-k6V" secondAttribute="bottom" constant="42" id="1KW-B2-Mct"/>
+                            <constraint firstItem="4Bq-vf-pRm" firstAttribute="trailing" secondItem="wWa-aj-k6V" secondAttribute="trailing" id="JKM-VR-3C6"/>
+                            <constraint firstItem="4Bq-vf-pRm" firstAttribute="centerX" secondItem="529-7N-6Wy" secondAttribute="centerX" id="Xvc-8X-PCS"/>
+                            <constraint firstItem="fct-6U-WgS" firstAttribute="top" secondItem="4Bq-vf-pRm" secondAttribute="bottom" constant="428" id="aqD-yX-Tih"/>
+                            <constraint firstItem="4Bq-vf-pRm" firstAttribute="leading" secondItem="wWa-aj-k6V" secondAttribute="leading" id="cpG-eh-HTf"/>
+                            <constraint firstItem="4Bq-vf-pRm" firstAttribute="leading" secondItem="529-7N-6Wy" secondAttribute="leadingMargin" constant="69" id="vB1-au-mJ9"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <segue destination="bRs-on-K7e" kind="show" identifier="menuToMap" id="ewl-jX-h9p"/>
+                        <segue destination="tNq-T9-QNw" kind="show" identifier="menuToWeb" id="MKr-w4-God"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35c-gs-NCv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1058" y="52"/>
+        </scene>
+        <!--My Map View Controller-->
         <scene sceneID="esc-fB-uHE">
             <objects>
-                <viewController id="bRs-on-K7e" sceneMemberID="viewController">
+                <viewController id="bRs-on-K7e" customClass="MyMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Pv-3s-4WT"/>
                         <viewControllerLayoutGuide type="bottom" id="VDz-WB-10W"/>
@@ -96,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="huR-65-Jr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="-57"/>
+            <point key="canvasLocation" x="1871" y="-72"/>
         </scene>
     </scenes>
 </document>

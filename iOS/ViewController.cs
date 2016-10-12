@@ -26,7 +26,7 @@ namespace Misao.iOS
 
 			btnMessage.TouchUpInside += (sender, e) =>
 			{
-				PerformSegue("moveToMyMapController", this);
+				PerformSegue("mainToNav", this);
 			};
 		}
 

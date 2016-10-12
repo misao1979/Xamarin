@@ -6,7 +6,7 @@ namespace Misao.iOS
 {
 	public partial class MyWebViewController : UIViewController
 	{
-		public MyWebViewController()(IntPtr handle) : base(handle)
+		public MyWebViewController(IntPtr handle) : base(handle)
 		{
 		}
 
